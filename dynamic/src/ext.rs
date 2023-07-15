@@ -1431,6 +1431,7 @@ pub struct Controller {
 /// Re-ordered bitfield the game uses for buttons
 #[bitfield]
 #[derive(Debug, Default, Copy, Clone)]
+#[repr(C)]
 pub struct ButtonBitfield {
     pub dpad_up: bool,
     pub dpad_right: bool,
@@ -1496,6 +1497,7 @@ pub struct MappedInputs {
 
 pub type StatusFunc = unsafe extern "C" fn(&mut L2CFighterCommon) -> L2CValue;
 
+#[repr(C)]
 pub struct StatusInfo {
     pub pre: Option<StatusFunc>,
     pub main: Option<StatusFunc>,
