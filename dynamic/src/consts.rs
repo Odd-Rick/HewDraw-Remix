@@ -606,9 +606,17 @@ pub mod vars {
 
     pub mod koopa {
         pub mod instance {
+            // flags
+            pub const IS_EXCELLENT_PUNCH: i32 = 0x0100; // determines if forward smash is an excellent punch
+
             // ints
             pub const FIREBALL_COOLDOWN_FRAME: i32 = 0x0100;
             pub const FIREBALL_EFFECT_ID: i32 = 0x0101;
+            pub const CHARGE_EFFECT_HANDLER: i32 = 0x0102;
+        }
+        pub mod status {
+            // flags
+            pub const PUNCH_CAN_ZOOM: i32 = 0x1101; // flag for controlling the zoom opff so it only runs once on impact
         }
     }
 
@@ -1191,6 +1199,10 @@ pub mod vars {
     }
     
     pub mod tantan {
+        pub mod instance {
+            //ints
+            pub const DRAGONIZE_R_EFFECT_HANDLE: i32 = 0x0100;
+        }
         pub mod status {
             // flags
             pub const ARMS_ATTACK_CANCEL: i32 = 0x1100;
